@@ -4,6 +4,7 @@ import './index.css'
 import Posts from './components/Posts'
 import Nav from './components/Nav'
 import { ThemeProvider } from './contexts/theme'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 class App extends React.Component {
   state = {
@@ -16,14 +17,18 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className={this.state.theme}>
-        <div className='container'>
-          <ThemeProvider value={this.state}>
-            <Nav />
-            <Posts type='top'/>
-          </ThemeProvider>
+      <Router>
+        <div className={this.state.theme}>
+          <div className='container'>
+            <ThemeProvider value={this.state}>
+              <Nav />
+
+              <Route exact path='/' render={() => <Posts type='top'/>}/>
+              <Route path='/new' render={() => <Posts type='new'/>}/>
+            </ThemeProvider>
+          </div>
         </div>
-      </div>
+      </Router>
     )
   }
 }

@@ -71,3 +71,22 @@ li {
 .meta-info-dark span {
   margin-right: 6px;
 }
+.space-between {
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav li {
+  margin-right: 10px;
+}
+
+.nav-link {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}

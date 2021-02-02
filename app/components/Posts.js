@@ -10,14 +10,19 @@ export default class Posts extends React.Component {
     posts: null
   }
   componentDidMount() {
-    this.handleFetch(this.props.type)
+    this.handleFetch()
   }
-  handleFetch = (type) => {
+  componentDidUpdate(prevProps) {
+    if (this.props.type !== prevProps.type) {
+      this.handleFetch()
+    }
+  }
+  handleFetch = () => {
     this.setState({
       error: null,
       posts: null
     })
-    fetchMainPosts(type)
+    fetchMainPosts(this.props.type)
       .then((posts) => {
         this.setState({
           posts
