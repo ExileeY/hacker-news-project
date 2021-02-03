@@ -50,7 +50,7 @@ li {
 }
 
 .dark a {
-  color: rgb(152,152,152);
+  color: rgb(200,200,200);
 }
 
 .meta-info-light {
@@ -63,6 +63,10 @@ li {
   margin-right: 6px;
 }
 
+.meta-info-light a {
+  color: black;
+}
+
 .meta-info-dark {
   margin-top: 5px;
   color: gray;
@@ -71,6 +75,11 @@ li {
 .meta-info-dark span {
   margin-right: 6px;
 }
+
+.meta-info-dark a {
+  color: #b8b8b8;
+}
+
 .space-between {
   justify-content: space-between;
 }
@@ -89,4 +98,8 @@ li {
   font-weight: bold;
   text-decoration: none;
   color: inherit;
+}
+
+.header {
+  margin-bottom: 5px;
 }
