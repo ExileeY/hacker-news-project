@@ -65,28 +65,3 @@ export default class User extends React.Component {
     )
   }
 }
-{/* <ThemeConsumer>
-  {({theme}) => (
-    <React.Fragment>
-      {user && (
-        <div>
-          <h1 className='header'>{user.id}</h1>
-          <div className={`meta-info-${theme}`}>
-            <span>joined {formatDate(user.created)}</span>
-            <span>has {user.karma} karma</span>
-          </div>
-          <p dangerouslySetInnerHTML={{__html: user.about}} />
-        </div>
-      )}
-      {posts && (
-        <div>
-          <h2>Posts</h2>
-          <PostsList posts={posts} />
-        </div>
-      )}
-
-      {loadingUser === true && <Loading text='Fetching user'/>}
-      {loadingPosts === true && <Loading text='Fetching posts'/>}
-    </React.Fragment>
-  )}
-</ThemeConsumer> */}
