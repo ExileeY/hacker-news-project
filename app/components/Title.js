@@ -1,11 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 export default function Title({url, title, id}) {
   return (
-    <a className='link' href={url}>
-      {title}
-    </a>
+    <React.Fragment>
+      {url
+        ? <a className='link' href={url}>
+            {title}
+          </a>
+        : <Link className='link' to={`/post?id=${id}`}>{title}</Link>}
+    </React.Fragment>
   )
 }
 

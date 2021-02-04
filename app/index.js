@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import Nav from './components/Nav'
 import Posts from './components/Posts'
+import Post from './components/Post'
 import User from './components/User'
 import { ThemeProvider } from './contexts/theme'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
@@ -27,6 +28,7 @@ class App extends React.Component {
               <Route exact path='/' render={() => <Posts type='top'/>}/>
               <Route path='/new' render={() => <Posts type='new'/>}/>
               <Route path='/user' component={User}/>
+              <Route path='/post' component={Post}/>
             </ThemeProvider>
           </div>
         </div>

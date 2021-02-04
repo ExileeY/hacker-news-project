@@ -25,12 +25,13 @@ export default class Posts extends React.Component {
     fetchMainPosts(this.props.type)
       .then((posts) => {
         this.setState({
-          posts
+          posts,
+          error: null
         })
       })
-      .catch((error) => {
+      .catch(({ message }) => {
         this.setState({
-          error
+          error: message
         })
       })
   }
@@ -46,7 +47,7 @@ export default class Posts extends React.Component {
       <React.Fragment>
         {this.isLoading() && <Loading />}
         {posts && <PostsList posts={posts} />}
-        {error && <h1>{error}</h1>}
+        {error && <p className='center-text'>{error}</p>}
       </React.Fragment>
     )
   }
