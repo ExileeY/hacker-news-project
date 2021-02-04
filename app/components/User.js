@@ -1,7 +1,6 @@
 import React from 'react'
 import { fetchUser, fetchPosts } from '../utils/api'
 import { formatDate } from '../utils/helpers'
-import { Link } from 'react-router-dom'
 import Loading from './Loading'
 import PostsList from './PostsList'
 import queryString from 'query-string'
