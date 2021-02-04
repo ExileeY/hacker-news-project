@@ -10,22 +10,28 @@ export default class Posts extends React.Component {
     posts: null
   }
   componentDidMount() {
-    this.handleFetch(this.props.type)
+    this.handleFetch()
   }
-  handleFetch = (type) => {
+  componentDidUpdate(prevProps) {
+    if (this.props.type !== prevProps.type) {
+      this.handleFetch()
+    }
+  }
+  handleFetch = () => {
     this.setState({
       error: null,
       posts: null
     })
-    fetchMainPosts(type)
+    fetchMainPosts(this.props.type)
       .then((posts) => {
         this.setState({
-          posts
+          posts,
+          error: null
         })
       })
-      .catch((error) => {
+      .catch(({ message }) => {
         this.setState({
-          error
+          error: message
         })
       })
   }
@@ -41,7 +47,7 @@ export default class Posts extends React.Component {
       <React.Fragment>
         {this.isLoading() && <Loading />}
         {posts && <PostsList posts={posts} />}
-        {error && <h1>{error}</h1>}
+        {error && <p className='center-text'>{error}</p>}
       </React.Fragment>
     )
   }
